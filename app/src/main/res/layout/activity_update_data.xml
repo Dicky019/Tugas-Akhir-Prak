@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFAF0"
+    android:padding="40dp"
+    tools:context=".UpdateData">
+
+    <EditText
+        android:id="@+id/edit_text_nomor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_nomor"
+        android:layout_alignLeft="@id/text_view_nomor"
+        android:drawableLeft="@drawable/ic_create_red_24dp"
+        android:hint="191232"
+        android:inputType="number"
+        android:maxLength="10" />
+
+    <TextView
+        android:id="@+id/text_view_nomor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/stb" />
+
+    <TextView
+        android:id="@+id/text_view_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_nomor"
+        android:layout_alignLeft="@id/edit_text_nomor"
+        android:layout_marginTop="10dp"
+
+        android:text="@string/nama" />
+
+    <EditText
+        android:id="@+id/edit_text_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_nama"
+        android:layout_alignLeft="@id/text_view_nama"
+        android:drawableLeft="@drawable/ic_group_red_24dp"
+        android:hint="Dicky"
+        android:inputType="text"
+        android:maxLength="20" />
+
+    <TextView
+        android:id="@+id/text_view_tanggal_lahir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_nama"
+        android:layout_alignLeft="@id/edit_text_nama"
+        android:layout_marginTop="10dp"
+        android:text="@string/tanggal_lahir" />
+
+    <EditText
+        android:id="@+id/edit_text_tanggal_lahir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_tanggal_lahir"
+        android:layout_alignLeft="@id/text_view_tanggal_lahir"
+        android:drawableLeft="@drawable/ic_date_range_red_24dp"
+        android:hint="@string/date_hint"
+        android:focusable="false"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/text_view_jenis_kelamin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_tanggal_lahir"
+        android:layout_alignLeft="@id/edit_text_tanggal_lahir"
+        android:layout_marginTop="10dp"
+        android:text="@string/jenis_kelamin" />
+
+    <EditText
+        android:id="@+id/edit_text_jenis_kelamin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_jenis_kelamin"
+        android:layout_alignLeft="@id/text_view_jenis_kelamin"
+        android:drawableLeft="@drawable/ic_person_red_24dp"
+        android:hint="@string/gender_hint"
+        android:inputType="text"
+        android:maxLength="1" />
+
+    <TextView
+        android:id="@+id/text_view_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_jenis_kelamin"
+        android:layout_alignLeft="@id/edit_text_jenis_kelamin"
+        android:layout_marginTop="10dp"
+        android:text="@string/alamat" />
+
+    <EditText
+        android:id="@+id/edit_text_alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_alamat"
+        android:layout_alignLeft="@id/text_view_alamat"
+        android:drawableLeft="@drawable/ic_place_place_24dp"
+        android:inputType="text"
+        android:hint="BTP"
+        android:maxLength="100" />
+
+    <Button
+        android:id="@+id/button_simpan"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/edit_text_alamat"
+        android:layout_alignParentBottom="true"
+        android:drawableLeft="@drawable/ic_save_red_24dp"
+        android:text="@string/simpan"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp" />
+
+</RelativeLayout>

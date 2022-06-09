@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFAF0"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="10dp"
+    tools:context=".DataMahasiswa">
+
+    <ListView
+        android:id="@+id/list_view_data_mahasiswa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
+
+    </ListView>
+
+</RelativeLayout>

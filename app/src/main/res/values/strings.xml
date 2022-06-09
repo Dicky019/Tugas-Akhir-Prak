@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Kelompok 3</string>
+    <string name="lihat_data">Lihat Data</string>
+    <string name="input_data">Input Data</string>
+    <string name="informasi">Informasi</string>
+    <string name="stb">Stb</string>
+    <string name="nama">Nama</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="date_hint">yyyy-mm-dd</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="gender_hint">L atau P</string>
+    <string name="alamat">Alamat</string>
+    <string name="simpan">Simpan</string>
+    <string name="created_by">Created By : Kelompok 3</string>
+    <string name="app_version">Version : 1.0</string>
+    <string name="web">Web : www.klptreeid.com</string>
+    <string name="app_description">Aplikasi Kampusku merupakan aplikasi yang digunakan untuk pendataan mahasiswa. User nantinya bisa menambahkan, update, dan hapus data mahasiswa</string>
+</resources>
