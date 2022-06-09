@@ -1,4 +1,4 @@
-package com.example.kelompok3;
+package com.example.kelompok2;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

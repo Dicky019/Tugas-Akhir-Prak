@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kelompok3">
+    package="com.example.kelompok2">
 
     <application
         android:allowBackup="true"
@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dicky">
         <activity
-            android:name=".DataMahasiswa"
+            android:name="com.example.kelompok2.DataMahasiswa"
             android:exported="false" />
         <activity
-            android:name=".UpdateData"
+            android:name="com.example.kelompok2.UpdateData"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="com.example.kelompok2.SplashScreenActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InputDataActivity"
+            android:name="com.example.kelompok2.InputDataActivity"
             android:exported="false" />
         <activity
-            android:name=".InformasiActivity"
+            android:name="com.example.kelompok2.InformasiActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailDataActivity"
+            android:name="com.example.kelompok2.DetailDataActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.kelompok2.MainActivity"
             android:exported="false"/>
 
     </application>
