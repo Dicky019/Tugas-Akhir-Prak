@@ -2,7 +2,7 @@
 
 Tugas Akhir Prak.Mobile
 
-## Kelompok 3
+## Kelompok 2
   - Dicky Darmawan
   - Azzahra Quines
   - Widi Septri Ponda
