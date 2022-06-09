@@ -31,11 +31,11 @@ public class DetailDataActivity extends AppCompatActivity {
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             cursor.moveToPosition(0);
-            textViewNomor.setText(cursor.getString(0).toString());
-            textViewNama.setText(cursor.getString(1).toString());
-            textViewTanggalLahir.setText(cursor.getString(2).toString());
-            textViewJenisKelamin.setText(cursor.getString(3).toString());
-            textViewAlamat.setText(cursor.getString(4).toString());
+            textViewNomor.setText(cursor.getString(1).toString());
+            textViewNama.setText(cursor.getString(2).toString());
+            textViewTanggalLahir.setText(cursor.getString(3).toString());
+            textViewJenisKelamin.setText(cursor.getString(4).toString());
+            textViewAlamat.setText(cursor.getString(5).toString());
         }
     }
 }

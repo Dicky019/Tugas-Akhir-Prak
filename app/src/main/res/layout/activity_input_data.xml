@@ -16,7 +16,7 @@
         android:drawableLeft="@drawable/ic_create_red_24dp"
         android:hint="191232"
         android:inputType="number"
-        android:maxLength="10" />
+        android:maxLength="6" />
 
     <TextView
         android:id="@+id/text_view_nomor"

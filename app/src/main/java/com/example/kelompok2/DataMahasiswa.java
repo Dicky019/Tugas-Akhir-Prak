@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DataMahasiswa extends AppCompatActivity {
 
     String[] daftar;
+    String[] daftarTampil;
     ListView listView;
     protected Cursor cursor;
     DataHelper dbCenter;
@@ -36,14 +37,16 @@ public class DataMahasiswa extends AppCompatActivity {
         SQLiteDatabase db = dbCenter.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM biodata", null);
         daftar = new String[cursor.getCount()];
+        daftarTampil = new String[cursor.getCount()];
         cursor.moveToFirst();
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
-            daftar[i] = cursor.getString(1).toString();
+            daftar[i] = cursor.getString(2).toString();
+            daftarTampil[i] = cursor.getString(1).toString() + "\n" + cursor.getString(2).toString();
         }
 
         listView = findViewById(R.id.list_view_data_mahasiswa);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
+        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftarTampil));
         listView.setSelected(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

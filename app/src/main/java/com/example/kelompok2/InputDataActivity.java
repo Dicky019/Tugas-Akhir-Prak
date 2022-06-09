@@ -17,7 +17,6 @@ public class InputDataActivity extends AppCompatActivity {
     DataHelper dbHelper;
     Button buttonSimpan;
     EditText editTextNomor, editTextNama, editTextTanggalLahir, editTextJenisKelamin, editTextAlamat;
-    String edit;
     TextView textViewNomor, textViewNama, textViewTanggalLahir, textViewJenisKelamin, textViewAlamat;
     DatePickerDialog datePickerDialog;
 
@@ -45,16 +44,10 @@ public class InputDataActivity extends AppCompatActivity {
         buttonSimpan.setOnClickListener(v -> {
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-            edit = editTextNomor.getText().toString();
-            edit = editTextNama.getText().toString();
-            edit = editTextTanggalLahir.getText().toString();
-            edit = editTextJenisKelamin.getText().toString();
-            edit = editTextAlamat.getText().toString();
-
-            if (edit.isEmpty()) {
+            if (editTextAlamat.getText().toString().isEmpty() || editTextNomor.getText().toString().isEmpty() || editTextNama.getText().toString().isEmpty() || editTextTanggalLahir.getText().toString().isEmpty() || editTextJenisKelamin.getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Kolom tidak boleh kosong...", Toast.LENGTH_SHORT).show();
             } else {
-                db.execSQL("insert into biodata(no, nama, tgl, jk, alamat) values('" +
+                db.execSQL("insert into biodata(stb, nama, tgl, jk, alamat) values('" +
                         editTextNomor.getText().toString() + "','" +
                         editTextNama.getText().toString() +"','" +
                         editTextTanggalLahir.getText().toString() + "','" +

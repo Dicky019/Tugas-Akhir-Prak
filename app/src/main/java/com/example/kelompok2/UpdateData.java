@@ -19,7 +19,6 @@ public class UpdateData extends AppCompatActivity {
     DataHelper dbHelper;
     Button buttonSimpan;
     EditText editTextNomor, editTextNama, editTextTanggalLahir, editTextJenisKelamin, editTextAlamat;
-    String edit;
     TextView textViewNomor, textViewNama, textViewTanggalLahir, textViewJenisKelamin, textViewAlamat;
     DatePickerDialog datePickerDialog;
 
@@ -49,32 +48,28 @@ public class UpdateData extends AppCompatActivity {
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             cursor.moveToPosition(0);
-            editTextNomor.setText(cursor.getString(0).toString());
-            editTextNama.setText(cursor.getString(1).toString());
-            editTextTanggalLahir.setText(cursor.getString(2).toString());
-            editTextJenisKelamin.setText(cursor.getString(3).toString());
-            editTextAlamat.setText(cursor.getString(4).toString());
+            editTextNomor.setText(cursor.getString(1).toString());
+            editTextNama.setText(cursor.getString(2).toString());
+            editTextTanggalLahir.setText(cursor.getString(3).toString());
+            editTextJenisKelamin.setText(cursor.getString(4).toString());
+            editTextAlamat.setText(cursor.getString(5).toString());
         }
 
         buttonSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-                edit = editTextNomor.getText().toString();
-                edit = editTextNama.getText().toString();
-                edit = editTextTanggalLahir.getText().toString();
-                edit = editTextJenisKelamin.getText().toString();
-                edit = editTextAlamat.getText().toString();
 
-                if (edit.isEmpty()) {
+                if (editTextAlamat.getText().toString().isEmpty() || editTextNomor.getText().toString().isEmpty() || editTextNama.getText().toString().isEmpty() || editTextTanggalLahir.getText().toString().isEmpty() || editTextJenisKelamin.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Kolom tidak boleh kosong...", Toast.LENGTH_SHORT).show();
                 } else {
-                    db.execSQL("update biodata set nama='" +
+                    db.execSQL("update biodata set stb='"  +
+                            editTextNomor.getText().toString() + "',  nama='" +
                             editTextNama.getText().toString() + "', tgl='" +
                             editTextTanggalLahir.getText().toString() + "', jk='" +
                             editTextJenisKelamin.getText().toString() + "', alamat='" +
                             editTextAlamat.getText().toString() + "' where no='" +
-                            editTextNomor.getText().toString() + "'");
+                            cursor.getString(0).toString() + "'");
                     Toast.makeText(getApplicationContext(), "Perubahan Tersimpan...", Toast.LENGTH_LONG).show();
                     finish();
                 }
