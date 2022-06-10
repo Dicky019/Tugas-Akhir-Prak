@@ -6,8 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +20,9 @@ public class UpdateData extends AppCompatActivity {
     protected Cursor cursor;
     DataHelper dbHelper;
     Button buttonSimpan;
-    EditText editTextNomor, editTextNama, editTextTanggalLahir, editTextJenisKelamin, editTextAlamat;
+    EditText editTextNomor, editTextNama, editTextTanggalLahir, editTextAlamat;
     TextView textViewNomor, textViewNama, textViewTanggalLahir, textViewJenisKelamin, textViewAlamat;
+    Spinner spinnerJenisKelamin;
     DatePickerDialog datePickerDialog;
 
     @Override
@@ -32,7 +35,7 @@ public class UpdateData extends AppCompatActivity {
         editTextNomor = findViewById(R.id.edit_text_nomor);
         editTextNama = findViewById(R.id.edit_text_nama);
         editTextTanggalLahir = findViewById(R.id.edit_text_tanggal_lahir);
-        editTextJenisKelamin = findViewById(R.id.edit_text_jenis_kelamin);
+        spinnerJenisKelamin = findViewById(R.id.spinner_jenis_kelamin);
         editTextAlamat = findViewById(R.id.edit_text_alamat);
 
         textViewNomor = findViewById(R.id.text_view_nomor);
@@ -43,6 +46,13 @@ public class UpdateData extends AppCompatActivity {
 
         buttonSimpan = findViewById(R.id.button_simpan);
 
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.jenis_kelamin, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerJenisKelamin.setAdapter(adapter);
+
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM biodata WHERE nama = '" + getIntent().getStringExtra("nama") + "'", null);
         cursor.moveToFirst();
@@ -51,7 +61,12 @@ public class UpdateData extends AppCompatActivity {
             editTextNomor.setText(cursor.getString(1).toString());
             editTextNama.setText(cursor.getString(2).toString());
             editTextTanggalLahir.setText(cursor.getString(3).toString());
-            editTextJenisKelamin.setText(cursor.getString(4).toString());
+            if (cursor.getString(4).toString().equals("Laki-Laki")){
+                spinnerJenisKelamin.setSelection(0);
+            }else {
+                spinnerJenisKelamin.setSelection(1);
+            }
+//            spinnerJenisKelamin.setText();
             editTextAlamat.setText(cursor.getString(5).toString());
         }
 
@@ -60,14 +75,14 @@ public class UpdateData extends AppCompatActivity {
             public void onClick(View v) {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-                if (editTextAlamat.getText().toString().isEmpty() || editTextNomor.getText().toString().isEmpty() || editTextNama.getText().toString().isEmpty() || editTextTanggalLahir.getText().toString().isEmpty() || editTextJenisKelamin.getText().toString().isEmpty()) {
+                if (editTextAlamat.getText().toString().isEmpty() || editTextNomor.getText().toString().isEmpty() || editTextNama.getText().toString().isEmpty() || editTextTanggalLahir.getText().toString().isEmpty() || spinnerJenisKelamin.getSelectedItem().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Kolom tidak boleh kosong...", Toast.LENGTH_SHORT).show();
                 } else {
                     db.execSQL("update biodata set stb='"  +
                             editTextNomor.getText().toString() + "',  nama='" +
                             editTextNama.getText().toString() + "', tgl='" +
                             editTextTanggalLahir.getText().toString() + "', jk='" +
-                            editTextJenisKelamin.getText().toString() + "', alamat='" +
+                            spinnerJenisKelamin.getSelectedItem().toString() + "', alamat='" +
                             editTextAlamat.getText().toString() + "' where no='" +
                             cursor.getString(0).toString() + "'");
                     Toast.makeText(getApplicationContext(), "Perubahan Tersimpan...", Toast.LENGTH_LONG).show();

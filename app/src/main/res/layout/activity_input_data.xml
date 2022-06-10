@@ -74,23 +74,28 @@
         android:layout_marginTop="10dp"
         android:text="@string/jenis_kelamin" />
 
-    <EditText
-        android:id="@+id/edit_text_jenis_kelamin"
+    <Spinner
+        android:id="@+id/spinner_jenis_kelamin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_jenis_kelamin"
-        android:layout_alignLeft="@id/text_view_jenis_kelamin"
-        android:drawableLeft="@drawable/ic_person_red_24dp"
         android:hint="@string/gender_hint"
-        android:inputType="text"
         android:maxLength="1" />
+
+    <View
+        android:id="@+id/garis"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/spinner_jenis_kelamin"
+        android:background="#636363" />
 
     <TextView
         android:id="@+id/text_view_alamat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_jenis_kelamin"
-        android:layout_alignLeft="@id/edit_text_jenis_kelamin"
+        android:layout_below="@id/garis"
+        android:layout_alignLeft="@id/garis"
+
         android:layout_marginTop="10dp"
         android:text="@string/alamat" />
 

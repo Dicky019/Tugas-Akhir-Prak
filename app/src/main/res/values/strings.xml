@@ -11,8 +11,12 @@
     <string name="gender_hint">L atau P</string>
     <string name="alamat">Alamat</string>
     <string name="simpan">Simpan</string>
-    <string name="created_by">Created By : Kelompok 3</string>
+    <string name="created_by">Created By : Kelompok 2</string>
     <string name="app_version">Version : 1.0</string>
-    <string name="web">Web : www.klptreeid.com</string>
+    <string name="web">Web : www.kelompok2.com</string>
     <string name="app_description">Aplikasi Kampusku merupakan aplikasi yang digunakan untuk pendataan mahasiswa. User nantinya bisa menambahkan, update, dan hapus data mahasiswa</string>
+    <string-array name="jenis_kelamin">
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
 </resources>
